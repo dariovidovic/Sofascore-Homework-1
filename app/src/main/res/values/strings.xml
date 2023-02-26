@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sofascore HW1</string>
+    <string name="button">Hide</string>
+    <string name="hello_sofascore">Hello Sofascore!!</string>
+</resources>
