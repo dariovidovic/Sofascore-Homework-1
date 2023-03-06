@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Sofascore-Homework-2</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tab1">Add Person</string>
     <string name="tab2">Lexicon</string>
@@ -15,6 +14,4 @@
     <string name="fav_food">Favourite food</string>
     <string name="fav_song">Favourite song</string>
     <string name="submit">Submit</string>
-    <string name="tab11">Tab1</string>
-    <string name="tab123">Tab1</string>
 </resources>
