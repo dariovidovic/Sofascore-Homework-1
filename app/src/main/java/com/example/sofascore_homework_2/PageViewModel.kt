@@ -1,7 +1,7 @@
 package com.example.sofascore_homework_2
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
 class PageViewModel : ViewModel() {
 
@@ -23,8 +23,6 @@ class PageViewModel : ViewModel() {
         favouriteFood: String,
         favouriteSong: String
     ) {
-        val list = liveData.value?.toMutableList()
-        liveData.value = list
         val person = Person(
             firstName,
             lastName,
@@ -37,6 +35,9 @@ class PageViewModel : ViewModel() {
             favouriteFood,
             favouriteSong
         )
+        val list = liveData.value?.toMutableList()
         list?.add(person)
+        liveData.value = list
+
     }
 }

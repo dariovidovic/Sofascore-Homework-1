@@ -14,6 +14,6 @@ data class Person(
 ) {
     override fun toString(): String {
         return "$firstName, $lastName, $age, $oib, $birthPlace," +
-                "$currentOccupation, $favouriteMovie, $favouriteTvShow, $favouriteFood, $favouriteSong"
+                "$currentOccupation, $favouriteMovie, $favouriteTvShow, $favouriteFood, $favouriteSong\n"
     }
 }

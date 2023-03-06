@@ -1,14 +1,13 @@
 package com.example.sofascore_homework_2
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.sofascore_homework_2.databinding.FragmentFirstBinding
-import com.example.sofascore_homework_2.databinding.FragmentSecondBinding
+
 
 
 class FirstFragment : Fragment() {
@@ -19,19 +18,8 @@ class FirstFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        /*viewModel.addPerson(
-            "dario",
-            "vidovic",
-            22,
-            12345,
-            "nova gradiska",
-            "student",
-            "shutter island",
-            "chernobyl",
-            "pizza",
-            "never gonna give you up"
-        )*/
+    ): View {
+
 
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -70,7 +58,6 @@ class FirstFragment : Fragment() {
     }
 
     companion object {
-        @JvmStatic
         fun newInstance() = FirstFragment()
     }
 }

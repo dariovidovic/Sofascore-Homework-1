@@ -1,20 +1,21 @@
 package com.example.sofascore_homework_2
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.example.sofascore_homework_2.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
-private lateinit var binding : ActivityMainBinding
+
+private lateinit var binding: ActivityMainBinding
 
 val tabsArray = arrayOf(
-    "Add Person",
-    "Lexicon"
+    "Tab1",
+    "Tab2"
 )
 
+
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -29,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
         viewPager.adapter = adapter
 
-        TabLayoutMediator(tabLayout, viewPager) {
-            tab, position -> tab.text = tabsArray[position]
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = tabsArray[position]
         }.attach()
     }
 }
