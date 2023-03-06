@@ -1,14 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    android:fillViewport="true"
+    tools:ignore="SpeakableTextPresentCheck"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/linear_layout1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/enter_first_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/first_name"
+            android:inputType="textPersonName"
+            android:textColorHint="#757575"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <EditText
+            android:id="@+id/enter_second_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/last_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <EditText
+            android:id="@+id/enter_age"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="0"
+            android:ems="10"
+            android:hint="@string/age"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <EditText
+            android:id="@+id/enter_oib"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/oib"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:autofillHints="0" />
+
+        <EditText
+            android:id="@+id/enter_birthplace"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/birthplace"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <EditText
+            android:id="@+id/enter_curr_occupation"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/curr_occupation"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <EditText
+            android:id="@+id/enter_fav_movie"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/fav_movie"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <EditText
+            android:id="@+id/enter_fav_tv_show"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/fav_tv_show"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <EditText
+            android:id="@+id/enter_fav_food"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/fav_food"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <EditText
+            android:id="@+id/enter_fav_song"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/fav_song"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit" />
+
+    </LinearLayout>
+
+</ScrollView>
+
