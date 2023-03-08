@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.core.view.children
 import androidx.fragment.app.activityViewModels
 import com.example.sofascore_homework_2.databinding.FragmentFirstBinding
 
@@ -38,16 +40,9 @@ class FirstFragment : Fragment() {
                     enterFavFood.text.toString(),
                     enterFavSong.text.toString()
                 )
-                enterFirstName.text.clear()
-                enterSecondName.text.clear()
-                enterAge.text.clear()
-                enterOib.text.clear()
-                enterBirthplace.text.clear()
-                enterCurrOccupation.text.clear()
-                enterFavMovie.text.clear()
-                enterFavTvShow.text.clear()
-                enterFavFood.text.clear()
-                enterFavSong.text.clear()
+                this.linearLayout1.children.forEach {
+                    (it as? EditText)?.text?.clear()
+                }
             }
         }
 

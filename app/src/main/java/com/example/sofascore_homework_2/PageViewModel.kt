@@ -5,7 +5,8 @@ import androidx.lifecycle.MutableLiveData
 
 class PageViewModel : ViewModel() {
 
-    private val liveData = MutableLiveData<List<Person>>(emptyList())
+    private val liveData = MutableLiveData<List<Person>>()
+    val _liveData : LiveData<List<Person>> = liveData
 
     fun getLiveData() : LiveData<List<Person>>{
         return liveData
@@ -35,8 +36,8 @@ class PageViewModel : ViewModel() {
             favouriteFood,
             favouriteSong
         )
-        val list = liveData.value?.toMutableList()
-        list?.add(person)
+        val list = _liveData.value?.toMutableList()?: arrayListOf()
+        list.add(person)
         liveData.value = list
 
     }
