@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_cab"
         android:name="com.example.homework3.ui.cabinet.CabinetFragment"
         android:label="@string/title_cabinet"
         tools:layout="@layout/fragment_cabinet" />

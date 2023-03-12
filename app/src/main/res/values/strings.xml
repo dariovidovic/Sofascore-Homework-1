@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_cabinet">Cabinet</string>
     <string name="header">Add your cocktail!</string>
+    <string name="preparation">Preparation</string>
+    <string name="garnish">Garnish</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="name">Name</string>
+    <string name="long_drink">Long drink</string>
+    <string name="submit">Submit</string>
+    <string name="shot">Shot</string>
+    <string name="glass">Glass</string>
 </resources>

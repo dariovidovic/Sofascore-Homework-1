@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/layout/activity_main.xml" value="0.17447916666666666" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/layout/fragment_cabinet.xml" value="0.1921875" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/layout/spinner_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14722222222222223" />
         <entry key="..\:/homework3/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/homework3/app/src/main/res/layout/fragment_cabinet.xml" value="0.253125" />
         <entry key="..\:/homework3/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
