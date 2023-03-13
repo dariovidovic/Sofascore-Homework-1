@@ -13,8 +13,8 @@ class PageViewModel : ViewModel() {
         return liveData
     }
 
-    fun addCocktail(cocktail: Cocktail){
-        val list = _liveData.value?.toMutableList()?: arrayListOf()
+    fun addCocktail(cocktail: Cocktail) {
+        val list = _liveData.value?.toMutableList() ?: arrayListOf()
         list.add(cocktail)
         liveData.value = list
     }

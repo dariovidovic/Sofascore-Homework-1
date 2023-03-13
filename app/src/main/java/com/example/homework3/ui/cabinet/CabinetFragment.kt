@@ -45,13 +45,14 @@ class CabinetFragment : Fragment() {
         _binding = null
     }
 
-    private fun buildList(people: List<Cocktail>) {
-        binding.constraintLayout.removeAllViews()
-        for (person in people) {
-            val personTextView = TextView(requireContext())
-            personTextView.text = person.toString()
-            personTextView.setTextColor(Color.BLACK)
-            binding.constraintLayout.addView(personTextView)
+    private fun buildList(cocktails: List<Cocktail>) {
+        binding.linearLayout.removeAllViews()
+        for (cocktail in cocktails) {
+            val cocktailTextView = TextView(requireContext())
+            cocktailTextView.text = cocktail.toString()
+            cocktailTextView.setTextColor(Color.BLACK)
+
+            binding.linearLayout.addView(cocktailTextView)
         }
     }
 }

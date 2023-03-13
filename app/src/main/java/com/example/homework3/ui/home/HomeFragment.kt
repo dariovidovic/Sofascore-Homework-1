@@ -14,9 +14,9 @@ import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.homework3.Cocktail
+import com.example.homework3.Glass
 import com.example.homework3.PageViewModel
 import com.example.homework3.databinding.FragmentHomeBinding
-import com.example.homework3.glass
 
 class HomeFragment : Fragment() {
 
@@ -32,39 +32,53 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val adapter = ArrayAdapter<glass>(
+        val adapter = ArrayAdapter<Glass>(
             requireContext(),
             android.R.layout.simple_spinner_item,
-            glass.values()
+            Glass.values()
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.glassSpinner.adapter = adapter
 
-            binding.run {
+        binding.run {
             submitButton.setOnClickListener {
 
-                if(enterName.text.isEmpty()){
-                    Toast.makeText(context, "Please enter the cocktail name!",Toast.LENGTH_SHORT).show()
+                if (enterName.text.isEmpty()) {
+                    Toast.makeText(context, "Please enter the cocktail name!", Toast.LENGTH_SHORT)
+                        .show()
                     submitButton.isClickable = false
                 }
 
-                if(enterIngredients.text.isEmpty()){
-                    Toast.makeText(context, "Please enter the cocktail's ingredients!",Toast.LENGTH_SHORT).show()
+                if (enterIngredients.text.isEmpty()) {
+                    Toast.makeText(
+                        context,
+                        "Please enter the cocktail's ingredients!",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     submitButton.isClickable = false
                 }
 
-                if(enterGarnish.text.isEmpty()){
-                    Toast.makeText(context, "Please enter the cocktail's garnish'!",Toast.LENGTH_SHORT).show()
+                if (enterGarnish.text.isEmpty()) {
+                    Toast.makeText(
+                        context,
+                        "Please enter the cocktail's garnish'!",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     submitButton.isClickable = false
                 }
 
-                if(enterDescription.text.isEmpty()){
-                    Toast.makeText(context, "Please enter the instructions for the cocktail!",Toast.LENGTH_SHORT).show()
+                if (enterDescription.text.isEmpty()) {
+                    Toast.makeText(
+                        context,
+                        "Please enter the instructions for the cocktail!",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     submitButton.isClickable = false
                 }
 
-                if(typeGroup.checkedRadioButtonId == -1){
-                    Toast.makeText(context, "Please pick the cocktail type!",Toast.LENGTH_SHORT).show()
+                if (typeGroup.checkedRadioButtonId == -1) {
+                    Toast.makeText(context, "Please pick the cocktail type!", Toast.LENGTH_SHORT)
+                        .show()
                     submitButton.isClickable = false
                 }
                 val selectedRadioButtonId = typeGroup.checkedRadioButtonId

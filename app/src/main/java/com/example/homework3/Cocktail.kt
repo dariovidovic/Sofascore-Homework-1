@@ -18,6 +18,6 @@ data class Cocktail(
     }
 }
 
-enum class glass{
+enum class Glass{
         HIGHBALL, COLLINS, ROCKS, MARTINI, MARGARITA, SHOOTER
 }

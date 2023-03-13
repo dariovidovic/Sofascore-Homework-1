@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:layout_editor_absoluteX="287dp"
     tools:layout_editor_absoluteY="61dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/home_bg"
         android:id="@+id/constraintLayout"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_bg"
         tools:context=".ui.home.HomeFragment">
 
         <TextView
-            android:fontFamily="@font/cherry"
-            android:gravity="center"
             android:id="@+id/header"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="25dp"
-            android:layout_width="wrap_content"
+            android:fontFamily="@font/cherry"
+            android:gravity="center"
             android:text="@string/header"
             android:textColor="@color/white"
             android:textSize="27sp"
@@ -33,127 +32,113 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            style="@style/Widget.AppCompat.EditText"
-            android:fontFamily="@font/cherry"
-            android:gravity="center"
-            android:hint="@string/name"
             android:id="@+id/enter_name"
-            android:inputType="textPersonName"
+            style="@style/decoration"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
-            android:layout_width="wrap_content"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:hint="@string/name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/header"
-            tools:ignore="TouchTargetSizeCheck"
-            android:importantForAutofill="no" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:fontFamily="@font/cherry"
-            android:gravity="center"
-            android:hint="@string/ingredients"
             android:id="@+id/enter_ingredients"
-            android:inputType="textPersonName"
+            style="@style/decoration"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
-            android:layout_width="wrap_content"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:hint="@string/ingredients"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_name"
-            tools:ignore="TouchTargetSizeCheck"
-            android:importantForAutofill="no" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:fontFamily="@font/cherry"
-            android:gravity="center"
-            android:hint="@string/garnish"
             android:id="@+id/enter_garnish"
-            android:inputType="textPersonName"
+            style="@style/decoration"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="25dp"
-            android:layout_width="wrap_content"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:hint="@string/garnish"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_ingredients"
-            tools:ignore="TouchTargetSizeCheck"
-            android:importantForAutofill="no" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:fontFamily="@font/cherry"
-            android:gravity="center"
-            android:hint="@string/preparation"
             android:id="@+id/enter_description"
-            android:inputType="textPersonName"
+            style="@style/decoration"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
-            android:layout_width="wrap_content"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:hint="@string/preparation"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_garnish"
-            tools:ignore="TouchTargetSizeCheck"
-            android:importantForAutofill="no" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioGroup
             android:id="@+id/typeGroup"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
-            android:layout_width="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_description">
 
             <RadioButton
-                android:fontFamily="@font/cherry"
                 android:id="@+id/shot"
-                android:layout_height="wrap_content"
+                style="@style/decoration"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/shot"
-                android:textColor="@color/white"
                 tools:ignore="TextContrastCheck" />
 
             <RadioButton
-                android:fontFamily="@font/cherry"
                 android:id="@+id/longDrink"
-                android:layout_height="wrap_content"
+                style="@style/decoration"
                 android:layout_width="wrap_content"
-                android:text="@string/long_drink"
-                android:textColor="@color/white" />
+                android:layout_height="wrap_content"
+                android:text="@string/long_drink" />
 
         </RadioGroup>
 
 
         <Button
             android:id="@+id/submit_button"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
-            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="@font/cherry"
             android:text="@string/submit"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/glass_spinner"
-            app:layout_constraintBottom_toBottomOf="parent"
             tools:ignore="TextContrastCheck" />
 
         <Spinner
-            android:background="@color/white"
             android:id="@+id/glass_spinner"
+            android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
-            android:layout_width="120dp"
+            android:background="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/typeGroup"
