@@ -40,8 +40,8 @@
             android:hint="@string/name"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/header"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -55,8 +55,8 @@
             android:hint="@string/ingredients"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_name"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -70,8 +70,8 @@
             android:hint="@string/garnish"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_ingredients"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -85,8 +85,8 @@
             android:hint="@string/preparation"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_garnish"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -96,8 +96,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_description">
 
             <RadioButton
@@ -127,8 +127,8 @@
             android:fontFamily="@font/cherry"
             android:text="@string/submit"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/glass_spinner"
             tools:ignore="TextContrastCheck" />
 
@@ -139,8 +139,8 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
             android:background="@color/white"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/typeGroup"
             tools:ignore="SpeakableTextPresentCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
