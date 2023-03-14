@@ -16,6 +16,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.homework3.Cocktail
 import com.example.homework3.Glass
 import com.example.homework3.PageViewModel
+import com.example.homework3.R
 import com.example.homework3.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -44,43 +45,31 @@ class HomeFragment : Fragment() {
             submitButton.setOnClickListener {
 
                 if (enterName.text.isEmpty()) {
-                    Toast.makeText(context, "Please enter the cocktail name!", Toast.LENGTH_SHORT)
-                        .show()
+                    enterName.error = getString(R.string.name_error_message)
                     submitButton.isClickable = false
                 }
 
                 if (enterIngredients.text.isEmpty()) {
-                    Toast.makeText(
-                        context,
-                        "Please enter the cocktail's ingredients!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    enterIngredients.error = getString(R.string.ingredients_error_message)
                     submitButton.isClickable = false
                 }
 
                 if (enterGarnish.text.isEmpty()) {
-                    Toast.makeText(
-                        context,
-                        "Please enter the cocktail's garnish'!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    enterGarnish.error = getString(R.string.garnish_error_message)
                     submitButton.isClickable = false
                 }
 
                 if (enterDescription.text.isEmpty()) {
-                    Toast.makeText(
-                        context,
-                        "Please enter the instructions for the cocktail!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    enterDescription.error = getString(R.string.instructions_error_message)
                     submitButton.isClickable = false
                 }
 
                 if (typeGroup.checkedRadioButtonId == -1) {
-                    Toast.makeText(context, "Please pick the cocktail type!", Toast.LENGTH_SHORT)
+                    Toast.makeText(context, getString(R.string.type_error_message) , Toast.LENGTH_SHORT)
                         .show()
                     submitButton.isClickable = false
                 }
+
                 val selectedRadioButtonId = typeGroup.checkedRadioButtonId
                 val checkedType = view?.findViewById<RadioButton>(selectedRadioButtonId)
 
