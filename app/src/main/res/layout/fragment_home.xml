@@ -31,74 +31,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/enter_name"
-            style="@style/decoration"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginTop="24dp"
-            android:hint="@string/name"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/enter_ingredients"
-            style="@style/decoration"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
-            android:hint="@string/ingredients"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enter_name"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/enter_garnish"
-            style="@style/decoration"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
-            android:hint="@string/garnish"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enter_ingredients"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/enter_description"
-            style="@style/decoration"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
-            android:hint="@string/preparation"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enter_garnish"
-            tools:ignore="TouchTargetSizeCheck" />
-
         <RadioGroup
             android:id="@+id/typeGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enter_description">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enter_instructions_layout"
+            tools:layout_editor_absoluteY="405dp">
 
             <RadioButton
                 android:id="@+id/shot"
@@ -143,6 +85,97 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/typeGroup"
             tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/enter_name_layout"
+            android:hint="Name"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/cherry"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/header"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="60dp"
+            app:boxBackgroundMode="none"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter_name"
+                style="@style/decoration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/cherry"
+            android:id="@+id/enter_ingredients_layout"
+            app:layout_constraintTop_toBottomOf="@id/enter_name_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:boxBackgroundMode="none"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:hint="Ingredients"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter_ingredients"
+                style="@style/decoration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/cherry"
+            android:id="@+id/enter_garnish_layout"
+            app:layout_constraintTop_toBottomOf="@id/enter_ingredients_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:boxBackgroundMode="none"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:hint="Garnish"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter_garnish"
+                style="@style/decoration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/cherry"
+            android:id="@+id/enter_instructions_layout"
+            app:layout_constraintTop_toBottomOf="@id/enter_garnish_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:boxBackgroundMode="none"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:hint="Preparation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter_instructions"
+                style="@style/decoration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

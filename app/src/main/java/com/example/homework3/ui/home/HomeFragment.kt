@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.Toast
+import android.widget.*
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -40,27 +37,29 @@ class HomeFragment : Fragment() {
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.glassSpinner.adapter = adapter
+        var test : Glass
+
 
         binding.run {
             submitButton.setOnClickListener {
 
-                if (enterName.text.isEmpty()) {
+                if (enterName.text!!.isEmpty()) {
                     enterName.error = getString(R.string.name_error_message)
                     submitButton.isClickable = false
                 }
 
-                if (enterIngredients.text.isEmpty()) {
+                if (enterIngredients.text!!.isEmpty()) {
                     enterIngredients.error = getString(R.string.ingredients_error_message)
                     submitButton.isClickable = false
                 }
 
-                if (enterGarnish.text.isEmpty()) {
+                if (enterGarnish.text!!.isEmpty()) {
                     enterGarnish.error = getString(R.string.garnish_error_message)
                     submitButton.isClickable = false
                 }
 
-                if (enterDescription.text.isEmpty()) {
-                    enterDescription.error = getString(R.string.instructions_error_message)
+                if (enterInstructions.text!!.isEmpty()) {
+                    enterInstructions.error = getString(R.string.instructions_error_message)
                     submitButton.isClickable = false
                 }
 
@@ -77,7 +76,7 @@ class HomeFragment : Fragment() {
                     enterName.text.toString(),
                     enterIngredients.text.toString(),
                     enterGarnish.text.toString(),
-                    enterDescription.text.toString(),
+                    enterInstructions.text.toString(),
                     checkedType?.text.toString(),
                     glassSpinner.selectedItem.toString()
                 )

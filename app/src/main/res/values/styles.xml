@@ -7,4 +7,9 @@
         <item name="android:textColorHint">@color/white</item>
     </style>
 
+    <style name="inputField">
+        <item name="android:fontFamily">@font/cherry</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
 </resources>

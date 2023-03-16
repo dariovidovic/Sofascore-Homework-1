@@ -2,18 +2,12 @@ package com.example.homework3.ui.cabinet
 
 import com.example.homework3.R
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toast.LENGTH_LONG
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.homework3.Cocktail
-import com.example.homework3.Glass
 import com.example.homework3.PageViewModel
 import com.example.homework3.databinding.FragmentCabinetBinding
 
@@ -42,6 +36,7 @@ class CabinetFragment : Fragment() {
             for(cocktail in it){
                 tempArray.add(cocktail.toString())
             }
+
         }
         val adapter = ArrayAdapter<String>(
             requireContext(),
