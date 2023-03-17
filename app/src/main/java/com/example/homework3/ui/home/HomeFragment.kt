@@ -3,6 +3,8 @@
 package com.example.homework3.ui.home
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +23,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val viewModel: PageViewModel by activityViewModels()
+    var flag = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,41 +40,24 @@ class HomeFragment : Fragment() {
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.glassSpinner.adapter = adapter
-        var test : Glass
+        var test: Glass
+        binding.submitButton.isEnabled = false
+        val selectedRadioButtonId = binding.typeGroup.checkedRadioButtonId
+        val checkedType = view?.findViewById<RadioButton>(selectedRadioButtonId)
 
 
         binding.run {
+            typeGroup.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{
+                group, checkedId -> if(checkedId!=-1) flag = true;
+            })
+            enterName.addTextChangedListener(textWatcher)
+            enterIngredients.addTextChangedListener(textWatcher)
+            enterGarnish.addTextChangedListener(textWatcher)
+            enterInstructions.addTextChangedListener(textWatcher)
+
+
+
             submitButton.setOnClickListener {
-
-                if (enterName.text!!.isEmpty()) {
-                    enterName.error = getString(R.string.name_error_message)
-                    submitButton.isClickable = false
-                }
-
-                if (enterIngredients.text!!.isEmpty()) {
-                    enterIngredients.error = getString(R.string.ingredients_error_message)
-                    submitButton.isClickable = false
-                }
-
-                if (enterGarnish.text!!.isEmpty()) {
-                    enterGarnish.error = getString(R.string.garnish_error_message)
-                    submitButton.isClickable = false
-                }
-
-                if (enterInstructions.text!!.isEmpty()) {
-                    enterInstructions.error = getString(R.string.instructions_error_message)
-                    submitButton.isClickable = false
-                }
-
-                if (typeGroup.checkedRadioButtonId == -1) {
-                    Toast.makeText(context, getString(R.string.type_error_message) , Toast.LENGTH_SHORT)
-                        .show()
-                    submitButton.isClickable = false
-                }
-
-                val selectedRadioButtonId = typeGroup.checkedRadioButtonId
-                val checkedType = view?.findViewById<RadioButton>(selectedRadioButtonId)
-
                 val cocktail = Cocktail(
                     enterName.text.toString(),
                     enterIngredients.text.toString(),
@@ -85,12 +71,33 @@ class HomeFragment : Fragment() {
                     (it as? EditText)?.text?.clear()
                 }
                 typeGroup.clearCheck()
-
             }
+
+
         }
 
 
         return root
+    }
+
+    private val textWatcher: TextWatcher = object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+        }
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            binding.run {
+                submitButton.isEnabled =
+                    (!enterName.text.toString().isEmpty() && !enterIngredients.text.toString()
+                        .isEmpty() && !enterGarnish.text.toString()
+                        .isEmpty() && !enterInstructions.text.toString().isEmpty() && flag)
+
+            }
+        }
+
+        override fun afterTextChanged(p0: Editable?) {
+        }
+
     }
 
     override fun onDestroyView() {

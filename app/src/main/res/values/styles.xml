@@ -7,9 +7,17 @@
         <item name="android:textColorHint">@color/white</item>
     </style>
 
-    <style name="inputField">
-        <item name="android:fontFamily">@font/cherry</item>
-        <item name="android:textColorHint">@color/white</item>
-    </style>
+    <declare-styleable name="inputFields">
+        <attr name="android:layout_width">match_parent</attr>
+        <attr name="android:layout_height">wrap_content</attr>
+        <attr name="layout_constraintStart_toStartOf">parent</attr>
+        <attr name="layout_constraintEnd_toEndOf">parent</attr>
+        <attr name="android:layout_marginTop">20dp</attr>
+        <attr name="android:layout_marginLeft">100dp</attr>
+        <attr name="android:layout_marginRight">100dp</attr>
+        <attr name="android:textColorHint">@color/white</attr>
+        <attr name="android:fontFamily">@font/cherry</attr>
+
+    </declare-styleable>
 
 </resources>
