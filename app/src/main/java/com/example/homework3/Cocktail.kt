@@ -6,18 +6,27 @@ data class Cocktail(
     val garnish: String,
     val description: String,
     val type: String,
-    val glass: String
+    val glass: Glass
 ) {
     override fun toString(): String {
-        return  "Cocktail name: $name\n" +
+        return "Cocktail name: $name\n" +
                 "Ingredients: $ingredients\n" +
                 "Garnish: $garnish\n" +
                 "Description: $description\n" +
                 "Type of drink: $type\n" +
-                "Serving glass: $glass"
+                "Serving glass: ${glass.toString()}"
     }
 }
 
-enum class Glass{
-        HIGHBALL, COLLINS, ROCKS, MARTINI, MARGARITA, SHOOTER
+enum class Glass(val value: String) {
+    Highball("Highball"),
+    Collins("Collins"),
+    Rocks("Rocks"),
+    Martini("Martini"),
+    Margarita("Margarita"),
+    Shooter("Shooter");
+
+    override fun toString(): String {
+        return value
+    }
 }

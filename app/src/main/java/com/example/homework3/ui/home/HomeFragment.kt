@@ -15,15 +15,16 @@ import androidx.fragment.app.activityViewModels
 import com.example.homework3.Cocktail
 import com.example.homework3.Glass
 import com.example.homework3.PageViewModel
-import com.example.homework3.R
 import com.example.homework3.databinding.FragmentHomeBinding
+
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val viewModel: PageViewModel by activityViewModels()
-    var flag = false
+    var inputFlag = false
+    var radioFlag = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,15 +41,12 @@ class HomeFragment : Fragment() {
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.glassSpinner.adapter = adapter
-        var test: Glass
         binding.submitButton.isEnabled = false
-        val selectedRadioButtonId = binding.typeGroup.checkedRadioButtonId
-        val checkedType = view?.findViewById<RadioButton>(selectedRadioButtonId)
-
 
         binding.run {
-            typeGroup.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{
-                group, checkedId -> if(checkedId!=-1) flag = true;
+            typeGroup.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { _, checkedId ->
+                radioFlag = (checkedId != -1)
+                enableButton()
             })
             enterName.addTextChangedListener(textWatcher)
             enterIngredients.addTextChangedListener(textWatcher)
@@ -58,19 +56,31 @@ class HomeFragment : Fragment() {
 
 
             submitButton.setOnClickListener {
+                val selectedRadioButtonId = typeGroup.checkedRadioButtonId
+                val checkedType = view?.findViewById<RadioButton>(selectedRadioButtonId)
                 val cocktail = Cocktail(
                     enterName.text.toString(),
                     enterIngredients.text.toString(),
                     enterGarnish.text.toString(),
                     enterInstructions.text.toString(),
                     checkedType?.text.toString(),
-                    glassSpinner.selectedItem.toString()
+                    Glass.valueOf(glassSpinner.selectedItem.toString())
                 )
                 viewModel.addCocktail(cocktail)
                 this.constraintLayout.children.forEach {
                     (it as? EditText)?.text?.clear()
                 }
                 typeGroup.clearCheck()
+
+                /*this.constraintLayout.children.forEach {
+                    (it as? TextInputEditText)?.text?.clear()
+                }*/
+                //Nisam siguran zasto ne radi s forEach clear() :(
+
+                binding.enterName.text?.clear()
+                binding.enterIngredients.text?.clear()
+                binding.enterGarnish.text?.clear()
+                binding.enterInstructions.text?.clear()
             }
 
 
@@ -87,17 +97,21 @@ class HomeFragment : Fragment() {
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             binding.run {
-                submitButton.isEnabled =
+                inputFlag =
                     (!enterName.text.toString().isEmpty() && !enterIngredients.text.toString()
                         .isEmpty() && !enterGarnish.text.toString()
-                        .isEmpty() && !enterInstructions.text.toString().isEmpty() && flag)
-
+                        .isEmpty() && !enterInstructions.text.toString().isEmpty())
+                enableButton()
             }
         }
 
         override fun afterTextChanged(p0: Editable?) {
         }
 
+    }
+
+    private fun enableButton() {
+        binding.submitButton.isEnabled = radioFlag && inputFlag
     }
 
     override fun onDestroyView() {
