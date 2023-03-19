@@ -1,8 +1,14 @@
 package com.example.homework3
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -11,6 +17,7 @@ import com.example.homework3.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private var notificationStatus: Boolean = false
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        setSupportActionBar(binding.toolbar)
         val navView: BottomNavigationView = binding.navView
 
         val navController =
@@ -32,4 +39,50 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.app_bar, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        if (notificationStatus) {
+            menu?.findItem(R.id.notifications)?.isVisible = false
+            menu?.findItem(R.id.notifications_on)?.isVisible = true
+        } else {
+            menu?.findItem(R.id.notifications)?.isVisible =true
+            menu?.findItem(R.id.notifications_on)?.isVisible = false
+        }
+        return super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.notifications -> {
+                notificationStatus = !notificationStatus
+                Toast.makeText(this, "Notifications turned on!", Toast.LENGTH_SHORT).show()
+                invalidateOptionsMenu()
+            }
+            R.id.notifications_on -> {
+                notificationStatus = !notificationStatus
+                Toast.makeText(this, "Notifications turned off!", Toast.LENGTH_SHORT).show()
+                invalidateOptionsMenu()
+            }
+            R.id.day_theme -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                Toast.makeText(this, "Day theme on!", Toast.LENGTH_SHORT).show()
+
+            }
+            R.id.night_theme -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                Toast.makeText(this, "Night theme on!", Toast.LENGTH_SHORT).show()
+
+            }
+
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
 }
