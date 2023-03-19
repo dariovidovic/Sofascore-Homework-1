@@ -3,7 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/SofascoreHW1/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/drawable/bg_button_disabled.xml" value="0.1" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/drawable/button_shape.xml" value="0.1505" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/layout/activity_list_view.xml" value="0.16" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/layout/activity_main.xml" value="0.17447916666666666" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/layout/fragment_cabinet.xml" value="0.1921875" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/layout/spinner_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Sofascore-Homework-1/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14722222222222223" />
+        <entry key="..\:/homework3/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/homework3/app/src/main/res/layout/fragment_cabinet.xml" value="0.253125" />
+        <entry key="..\:/homework3/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/homework3/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="..\:/homework3/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
