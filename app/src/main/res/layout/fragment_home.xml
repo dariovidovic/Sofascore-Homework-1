@@ -7,11 +7,12 @@
     android:layout_height="match_parent"
     tools:layout_editor_absoluteX="287dp"
     tools:layout_editor_absoluteY="61dp"
-    android:background="@drawable/home_bg">
+    android:background="@drawable/cabinet_bg">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".ui.home.HomeFragment">
@@ -24,7 +25,7 @@
             android:fontFamily="@font/cherry"
             android:gravity="center"
             android:text="@string/header"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="27sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.561"
@@ -39,7 +40,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/enter_instructions_layout"
+            app:layout_constraintTop_toBottomOf="@id/enter_picture_url_layout"
             tools:layout_editor_absoluteY="405dp">
 
             <RadioButton
@@ -65,15 +66,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="60dp"
-            android:fontFamily="@font/cherry"
+            android:layout_marginBottom="150dp"
             android:background="@drawable/button_shape"
+            android:fontFamily="@font/cherry"
             android:text="@string/submit"
-            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.532"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/glass_spinner"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="TextContrastCheck" />
 
         <Spinner
@@ -91,7 +93,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/enter_name_layout"
             android:hint="@string/name"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             android:fontFamily="@font/cherry"
             app:helperText="*Required"
             app:helperTextTextColor="@color/red"
@@ -117,7 +119,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             android:fontFamily="@font/cherry"
             app:helperText="*Required"
             app:helperTextTextColor="@color/red"
@@ -141,7 +143,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             android:fontFamily="@font/cherry"
             android:id="@+id/enter_garnish_layout"
             app:helperText="*Required"
@@ -165,7 +167,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             android:fontFamily="@font/cherry"
             app:helperText="*Required"
             app:helperTextTextColor="@color/red"
@@ -181,6 +183,30 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/enter_instructions"
+                style="@style/decoration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:fontFamily="@font/cherry"
+            app:helperText="*Required"
+            app:helperTextTextColor="@color/red"
+            android:id="@+id/enter_picture_url_layout"
+            app:layout_constraintTop_toBottomOf="@id/enter_instructions_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:boxBackgroundMode="none"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:hint="@string/picture_url"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter_picture_url"
                 style="@style/decoration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

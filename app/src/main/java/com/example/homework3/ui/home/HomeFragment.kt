@@ -16,6 +16,7 @@ import com.example.homework3.Cocktail
 import com.example.homework3.Glass
 import com.example.homework3.PageViewModel
 import com.example.homework3.databinding.FragmentHomeBinding
+import com.google.android.material.snackbar.Snackbar
 
 
 class HomeFragment : Fragment() {
@@ -52,6 +53,7 @@ class HomeFragment : Fragment() {
             enterIngredients.addTextChangedListener(textWatcher)
             enterGarnish.addTextChangedListener(textWatcher)
             enterInstructions.addTextChangedListener(textWatcher)
+            enterPictureUrl.addTextChangedListener(textWatcher)
 
 
 
@@ -64,7 +66,8 @@ class HomeFragment : Fragment() {
                     enterGarnish.text.toString(),
                     enterInstructions.text.toString(),
                     checkedType?.text.toString(),
-                    Glass.valueOf(glassSpinner.selectedItem.toString())
+                    Glass.valueOf(glassSpinner.selectedItem.toString()),
+                    enterPictureUrl.text.toString()
                 )
                 viewModel.addCocktail(cocktail)
                 this.constraintLayout.children.forEach {
@@ -81,6 +84,10 @@ class HomeFragment : Fragment() {
                 binding.enterIngredients.text?.clear()
                 binding.enterGarnish.text?.clear()
                 binding.enterInstructions.text?.clear()
+                binding.enterPictureUrl.text?.clear()
+
+                val snack = Snackbar.make(it,"Successfully added cocktail!",Snackbar.LENGTH_SHORT)
+                snack.show()
             }
 
 
@@ -100,7 +107,8 @@ class HomeFragment : Fragment() {
                 inputFlag =
                     (!enterName.text.toString().isEmpty() && !enterIngredients.text.toString()
                         .isEmpty() && !enterGarnish.text.toString()
-                        .isEmpty() && !enterInstructions.text.toString().isEmpty())
+                        .isEmpty() && !enterInstructions.text.toString()
+                        .isEmpty() && !enterPictureUrl.text.toString().isEmpty())
                 enableButton()
             }
         }

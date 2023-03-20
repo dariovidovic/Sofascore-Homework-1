@@ -16,4 +16,8 @@
     <string name="garnish_error_message">Please enter the cocktail\'s garnish!</string>
     <string name="instructions_error_message">Please enter the instructions for the cocktail!</string>
     <string name="type_error_message">Please pick the cocktail type!</string>
+    <string name="notifications">Notifications</string>
+    <string name="notifications_on">Notifications on</string>
+    <string name="picture_url">Picture URL</string>
+    <string name="type">Type</string>
 </resources>

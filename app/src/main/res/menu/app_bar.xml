@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:titleCentered="true">
+    <item
+        android:id="@+id/notifications"
+        android:icon="@drawable/notifications"
+        android:title="@string/notifications"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/notifications_on"
+        android:icon="@drawable/notifications_on"
+        android:title="@string/notifications_on"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/day_theme"
+        android:icon="@drawable/day_mode"
+        android:title="Day theme"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/night_theme"
+        android:icon="@drawable/night_mode"
+        android:title="Night Theme"
+        app:showAsAction="ifRoom" />
+
+
+</menu>
