@@ -1,6 +1,6 @@
 package com.example.homework3.ui.cabinet
 
-import android.util.Log
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,12 +8,10 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.homework3.Cocktail
 import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
 import coil.load
-import coil.request.ImageRequest
+import com.example.homework3.CollapsibleToolbarActivity
 import com.example.homework3.R
-import java.io.File
+
 
 
 class CocktailAdapter(private val cocktailList: MutableList<Cocktail>) :
@@ -28,15 +26,15 @@ class CocktailAdapter(private val cocktailList: MutableList<Cocktail>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentCocktail = cocktailList[position]
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, CollapsibleToolbarActivity::class.java)
+            intent.putExtra("cocktail", currentCocktail)
+            holder.itemView.context.startActivity(intent)
+        }
         holder.cocktailName.text = currentCocktail.name
         holder.cocktailImage.load(currentCocktail.picture_url){
-            listener(onSuccess = { _, _ ->
-                Log.d("Rezultat: ", "Uspjesno!")
-            }, onError = { request: ImageRequest, throwable: Throwable ->
-                // handle error here
+            error(R.drawable.ic_launcher_background)
 
-                Log.d("Rezultat", "neuspjesno")
-            })
         }
 
     }
@@ -48,5 +46,6 @@ class CocktailAdapter(private val cocktailList: MutableList<Cocktail>) :
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cocktailImage : ImageView = itemView.findViewById(R.id.cocktail_image)
         val cocktailName : TextView = itemView.findViewById(R.id.cocktail_name)
+
     }
 }

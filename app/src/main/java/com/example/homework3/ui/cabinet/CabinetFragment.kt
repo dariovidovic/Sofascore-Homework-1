@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.homework3.Cocktail
 import com.example.homework3.PageViewModel
 import com.example.homework3.databinding.FragmentCabinetBinding
@@ -44,8 +45,11 @@ class CabinetFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         val cocktailList = binding.recyclerView
         val adapter = CocktailAdapter(tempArray)
+
+
         binding.recyclerView.layoutManager = linearLayoutManager
         cocktailList.adapter = adapter
+
 
 
 
