@@ -40,7 +40,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/enter_instructions_layout"
+            app:layout_constraintTop_toBottomOf="@id/enter_picture_url_layout"
             tools:layout_editor_absoluteY="405dp">
 
             <RadioButton
@@ -183,6 +183,30 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/enter_instructions"
+                style="@style/decoration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:fontFamily="@font/cherry"
+            app:helperText="*Required"
+            app:helperTextTextColor="@color/red"
+            android:id="@+id/enter_picture_url_layout"
+            app:layout_constraintTop_toBottomOf="@id/enter_instructions_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:boxBackgroundMode="none"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:hint="@string/picture_url"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter_picture_url"
                 style="@style/decoration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

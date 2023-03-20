@@ -52,6 +52,7 @@ class HomeFragment : Fragment() {
             enterIngredients.addTextChangedListener(textWatcher)
             enterGarnish.addTextChangedListener(textWatcher)
             enterInstructions.addTextChangedListener(textWatcher)
+            enterPictureUrl.addTextChangedListener(textWatcher)
 
 
 
@@ -64,7 +65,8 @@ class HomeFragment : Fragment() {
                     enterGarnish.text.toString(),
                     enterInstructions.text.toString(),
                     checkedType?.text.toString(),
-                    Glass.valueOf(glassSpinner.selectedItem.toString())
+                    Glass.valueOf(glassSpinner.selectedItem.toString()),
+                    enterPictureUrl.text.toString()
                 )
                 viewModel.addCocktail(cocktail)
                 this.constraintLayout.children.forEach {
@@ -81,6 +83,7 @@ class HomeFragment : Fragment() {
                 binding.enterIngredients.text?.clear()
                 binding.enterGarnish.text?.clear()
                 binding.enterInstructions.text?.clear()
+                binding.enterPictureUrl.text?.clear()
             }
 
 
@@ -100,7 +103,8 @@ class HomeFragment : Fragment() {
                 inputFlag =
                     (!enterName.text.toString().isEmpty() && !enterIngredients.text.toString()
                         .isEmpty() && !enterGarnish.text.toString()
-                        .isEmpty() && !enterInstructions.text.toString().isEmpty())
+                        .isEmpty() && !enterInstructions.text.toString()
+                        .isEmpty() && !enterPictureUrl.text.toString().isEmpty())
                 enableButton()
             }
         }

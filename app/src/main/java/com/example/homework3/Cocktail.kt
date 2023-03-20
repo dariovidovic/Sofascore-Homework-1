@@ -6,7 +6,8 @@ data class Cocktail(
     val garnish: String,
     val description: String,
     val type: String,
-    val glass: Glass
+    val glass: Glass,
+    val picture_url: String
 ) {
     override fun toString(): String {
         return "Cocktail name: $name\n" +

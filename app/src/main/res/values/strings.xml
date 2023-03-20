@@ -18,4 +18,5 @@
     <string name="type_error_message">Please pick the cocktail type!</string>
     <string name="notifications">Notifications</string>
     <string name="notifications_on">Notifications on</string>
+    <string name="picture_url">Picture URL</string>
 </resources>
