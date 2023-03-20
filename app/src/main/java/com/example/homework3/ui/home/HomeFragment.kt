@@ -16,6 +16,7 @@ import com.example.homework3.Cocktail
 import com.example.homework3.Glass
 import com.example.homework3.PageViewModel
 import com.example.homework3.databinding.FragmentHomeBinding
+import com.google.android.material.snackbar.Snackbar
 
 
 class HomeFragment : Fragment() {
@@ -84,6 +85,9 @@ class HomeFragment : Fragment() {
                 binding.enterGarnish.text?.clear()
                 binding.enterInstructions.text?.clear()
                 binding.enterPictureUrl.text?.clear()
+
+                val snack = Snackbar.make(it,"Successfully added cocktail!",Snackbar.LENGTH_SHORT)
+                snack.show()
             }
 
 

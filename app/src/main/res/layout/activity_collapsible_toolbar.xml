@@ -24,7 +24,7 @@
                 android:id="@+id/cocktailImage"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
-                android:layout_marginStart="200dp"
+                android:layout_marginStart="215dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
                 app:layout_collapseMode="parallax"
